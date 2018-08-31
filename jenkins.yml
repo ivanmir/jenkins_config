@@ -1,0 +1,25 @@
+jenkins:
+  systemMessage: "Jenkins configured automatically by Jenkins Configuration as Code Plugin\n\n"
+  numExecutors: 2
+  scmCheckoutRetryCount: 2
+  mode: NORMAL
+  
+  globalNodeProperties:
+    - envVars:
+        env:
+          - key: HOME
+            value: /home/vcap/.jenkins
+          - key: JENKINS_HOME
+            value: /home/vcap/.jenkins
+          - key: JENKINS_URL
+            value: https://i807056-jenkins.cfapps.eu10.hana.ondemand.com/
+
+tool:
+  git:
+    installations:
+      - name: git
+        home: /usr/bin/git
+
+security:
+    remotingCLI:
+          enabled: false
